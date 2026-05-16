@@ -1169,6 +1169,8 @@ Config: view                                           *nvim-tree-config-view*
       • {side}?                         (`"left"|"right"`) (default: `"left"`)
       • {signcolumn}?                   (`"yes"|"auto"|"no"`, default:
                                         `"yes"`) |'signcolumn'|
+      • {statuscolumn}?                 (`string`, default: `" "`)
+                                        |'statuscolumn'|
       • {width}?                        (`nvim_tree.config.view.width.spec|nvim_tree.config.view.width`)
                                         (default: `30`)
 
@@ -1986,6 +1988,7 @@ Following is the default configuration, see |nvim_tree.config| for details. >lua
         number = false,
         relativenumber = false,
         signcolumn = "yes",
+        statuscolumn = "",
         width = 30,
         float = {
           enable = false,

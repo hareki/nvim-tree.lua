@@ -100,6 +100,7 @@ function M.initialize()
   M.Active.winopts.number = config.g.view.number
   M.Active.winopts.relativenumber = config.g.view.relativenumber
   M.Active.winopts.signcolumn = config.g.view.signcolumn
+  M.Active.winopts.statuscolumn = config.g.view.statuscolumn
 
   M.configure_width(config.g.view.width)
 
