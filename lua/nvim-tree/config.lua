@@ -60,6 +60,7 @@ M.d = { -- config-default-start
     number = false,
     relativenumber = false,
     signcolumn = "yes",
+    statuscolumn = "",
     width = 30,
     float = {
       enable = false,
