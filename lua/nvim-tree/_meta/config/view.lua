@@ -52,6 +52,10 @@ error("Cannot require a meta file")
 ---(default: `"yes"`)
 ---@field signcolumn? "yes"|"auto"|"no"
 ---
+---['statuscolumn']
+---(default: `" "`)
+---@field statuscolumn? string
+---
 ---(default: `30`)
 ---@field width? nvim_tree.config.view.width.spec|nvim_tree.config.view.width
 ---
