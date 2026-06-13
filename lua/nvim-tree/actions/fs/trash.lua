@@ -20,10 +20,11 @@ local function clear_buffer(absolute_path)
   for _, buf in pairs(bufs) do
     if buf.name == absolute_path then
       if buf.hidden == 0 and #bufs > 1 then
-        local winnr = vim.api.nvim_get_current_win()
-        vim.api.nvim_set_current_win(buf.windows[1])
-        vim.cmd(":bn")
-        vim.api.nvim_set_current_win(winnr)
+        -- Switch the buffer in the window showing this file without moving
+        -- focus, so float quit_on_focus_loss is not triggered.
+        vim.api.nvim_win_call(buf.windows[1], function()
+          vim.cmd(":bn")
+        end)
       end
       vim.api.nvim_buf_delete(buf.bufnr, {})
       return
