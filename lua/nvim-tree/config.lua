@@ -286,6 +286,7 @@ M.d = { -- config-default-start
   },
   help = {
     sort_by = "key",
+    border = "single",
   },
   ui = {
     confirm = {
@@ -362,6 +363,9 @@ local ACCEPTED_TYPES = {
       },
     },
   },
+  help = {
+    border = { "string", "table" },
+  },
   bookmarks = {
     persist = { "boolean", "string" },
   },
@@ -429,7 +433,7 @@ local function validate_config(u)
     -- only compare tables with contents that are not integer indexed nor enums
     if not enum_value and (type(def) ~= "table" or not next(def) or type(next(def)) == "number") then
       -- unless the field can be a table (and is not a table in default config)
-      if vim.tbl_contains(types, "table") then
+      if vim.tbl_contains(types, "table") and type(next(user)) ~= "number" then
         -- use a dummy default to allow all checks
         def = {}
       else
