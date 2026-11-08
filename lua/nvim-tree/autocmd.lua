@@ -107,6 +107,7 @@ function M.global()
         require("nvim-tree.diagnostics").update_lsp(ev)
       end,
     })
+    require("nvim-tree.diagnostics-seed").seed()
 
     vim.api.nvim_create_autocmd("User", {
       group = augroup_id,
